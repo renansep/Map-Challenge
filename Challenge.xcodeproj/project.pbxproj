@@ -26,6 +26,7 @@
 		75A8531A18A27587006F37AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A852FC18A27587006F37AE /* UIKit.framework */; };
 		75A8532218A27587006F37AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75A8532018A27587006F37AE /* InfoPlist.strings */; };
 		75A8532418A27587006F37AE /* ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A8532318A27587006F37AE /* ChallengeTests.m */; };
+		B50C658418A407BD001FAE73 /* CadastroLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50C658318A407BD001FAE73 /* CadastroLocalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		75A8531F18A27587006F37AE /* ChallengeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChallengeTests-Info.plist"; sourceTree = "<group>"; };
 		75A8532118A27587006F37AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75A8532318A27587006F37AE /* ChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChallengeTests.m; sourceTree = "<group>"; };
+		B50C658218A407BD001FAE73 /* CadastroLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroLocalViewController.h; sourceTree = "<group>"; };
+		B50C658318A407BD001FAE73 /* CadastroLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroLocalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				759A958D18A39B720025C1D2 /* Local.h */,
 				759A958E18A39B720025C1D2 /* Local.m */,
 				75A8530E18A27587006F37AE /* ViewController.m */,
+				B50C658218A407BD001FAE73 /* CadastroLocalViewController.h */,
+				B50C658318A407BD001FAE73 /* CadastroLocalViewController.m */,
 				75A8531018A27587006F37AE /* Images.xcassets */,
 				75A852FF18A27587006F37AE /* Supporting Files */,
 			);
@@ -274,6 +279,7 @@
 			files = (
 				75A8530F18A27587006F37AE /* ViewController.m in Sources */,
 				759A959618A3B14D0025C1D2 /* MapaViewController.m in Sources */,
+				B50C658418A407BD001FAE73 /* CadastroLocalViewController.m in Sources */,
 				759A958F18A39B720025C1D2 /* Local.m in Sources */,
 				75A8530918A27587006F37AE /* AppDelegate.m in Sources */,
 				75A8530518A27587006F37AE /* main.m in Sources */,

@@ -9,6 +9,7 @@
 #import "MapaViewController.h"
 #import "AppDelegate.h"
 #import "Local.h"
+#import "CadastroLocalViewController.h"
 
 @interface MapaViewController ()
 
@@ -135,7 +136,7 @@
     annView.canShowCallout = YES;
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [rightButton addTarget:self
-                    action:@selector(setOrigemDestino:)
+                    action:@selector(cadastraLocal:)
           forControlEvents:(UIControlEvents)UIControlEventTouchDown];
     annView.rightCalloutAccessoryView = rightButton;
     return annView;
@@ -150,6 +151,26 @@
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
     selectedPin = nil;
+}
+
+-(void)cadastraLocal:(id)sender
+{
+    CadastroLocalViewController *monitorMenuViewController = [[CadastroLocalViewController alloc] init];
+//    [self presentViewController:monitorMenuViewController animated:YES completion:nil];
+    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    CadastroLocalViewController *viewController = (CadastroLocalViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CadastroLocalViewController"];
+//    [self presentViewController:viewController animated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
+    
+    CadastroLocalViewController *secondViewController =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"localViewController"];
+    secondViewController.descricao = selectedPin.title;
+    [self presentModalViewController:secondViewController animated:YES];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
