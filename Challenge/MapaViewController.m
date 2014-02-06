@@ -14,8 +14,9 @@
 
 @end
 
-@implementation MapaViewController
 
+@implementation MapaViewController
+@synthesize mapView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    mapView.delegate = self;
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -155,5 +157,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+    
+    - (IBAction)setMapType:(UISegmentedControl *)sender {
+        switch (sender.selectedSegmentIndex)
+        {
+            case 0:
+                mapView.mapType = MKMapTypeStandard;
+                break;
+            case 1:
+                mapView.mapType = MKMapTypeSatellite;
+                break;
+            case 2:
+                mapView.mapType = MKMapTypeHybrid;
+                break;
+        }
+    }
+    
+    
 
 @end
