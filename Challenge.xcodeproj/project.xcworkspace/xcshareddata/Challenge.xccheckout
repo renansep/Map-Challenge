@@ -5,31 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-<<<<<<< HEAD
-	<string>FBD204B8-F6D5-45DD-831D-229DBB3EB2A1</string>
-=======
-	<string>E317A8EC-23DB-4CC2-AA38-19468114D7F7</string>
->>>>>>> 23023bb177eb41a8483e8b1b50acee5949c94a94
+	<string>D0675CDA-E55A-408E-A47C-B2AB594D1185</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Challenge</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-<<<<<<< HEAD
-		<key>3A174F86-5E5F-4315-A41A-F5C0166F3F5A</key>
-=======
-		<key>717134E3-5B62-4D9A-A54A-789A83F5B7FB</key>
->>>>>>> 23023bb177eb41a8483e8b1b50acee5949c94a94
+		<key>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</key>
 		<string>https://github.com/renansep/Map-Challenge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Challenge.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-<<<<<<< HEAD
-		<key>3A174F86-5E5F-4315-A41A-F5C0166F3F5A</key>
-=======
-		<key>717134E3-5B62-4D9A-A54A-789A83F5B7FB</key>
->>>>>>> 23023bb177eb41a8483e8b1b50acee5949c94a94
+		<key>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -37,22 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-<<<<<<< HEAD
-	<string>3A174F86-5E5F-4315-A41A-F5C0166F3F5A</string>
-=======
-	<string>717134E3-5B62-4D9A-A54A-789A83F5B7FB</string>
->>>>>>> 23023bb177eb41a8483e8b1b50acee5949c94a94
+	<string>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-<<<<<<< HEAD
-			<string>3A174F86-5E5F-4315-A41A-F5C0166F3F5A</string>
-=======
-			<string>717134E3-5B62-4D9A-A54A-789A83F5B7FB</string>
->>>>>>> 23023bb177eb41a8483e8b1b50acee5949c94a94
+			<string>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Map-Challenge</string>
 		</dict>
