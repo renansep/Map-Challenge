@@ -10,6 +10,8 @@
 		759A958F18A39B720025C1D2 /* Local.m in Sources */ = {isa = PBXBuildFile; fileRef = 759A958E18A39B720025C1D2 /* Local.m */; };
 		759A959118A39B8F0025C1D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759A959018A39B8F0025C1D2 /* CoreLocation.framework */; };
 		759A959318A39B960025C1D2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759A959218A39B960025C1D2 /* MapKit.framework */; };
+		759A959618A3B14D0025C1D2 /* MapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759A959518A3B14D0025C1D2 /* MapaViewController.m */; };
+		759A959918A3B1F10025C1D2 /* ListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759A959818A3B1F10025C1D2 /* ListaTableViewController.m */; };
 		75A852F918A27587006F37AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A852F818A27587006F37AE /* Foundation.framework */; };
 		75A852FB18A27587006F37AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A852FA18A27587006F37AE /* CoreGraphics.framework */; };
 		75A852FD18A27587006F37AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A852FC18A27587006F37AE /* UIKit.framework */; };
@@ -41,6 +43,10 @@
 		759A958E18A39B720025C1D2 /* Local.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Local.m; sourceTree = "<group>"; };
 		759A959018A39B8F0025C1D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		759A959218A39B960025C1D2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		759A959418A3B14D0025C1D2 /* MapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapaViewController.h; sourceTree = "<group>"; };
+		759A959518A3B14D0025C1D2 /* MapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapaViewController.m; sourceTree = "<group>"; };
+		759A959718A3B1F10025C1D2 /* ListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewController.h; sourceTree = "<group>"; };
+		759A959818A3B1F10025C1D2 /* ListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewController.m; sourceTree = "<group>"; };
 		75A852F518A27587006F37AE /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A852F818A27587006F37AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75A852FA18A27587006F37AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +132,10 @@
 				75A8530718A27587006F37AE /* AppDelegate.h */,
 				75A8530818A27587006F37AE /* AppDelegate.m */,
 				75A8530A18A27587006F37AE /* Main.storyboard */,
+				759A959718A3B1F10025C1D2 /* ListaTableViewController.h */,
+				759A959818A3B1F10025C1D2 /* ListaTableViewController.m */,
+				759A959418A3B14D0025C1D2 /* MapaViewController.h */,
+				759A959518A3B14D0025C1D2 /* MapaViewController.m */,
 				75A8530D18A27587006F37AE /* ViewController.h */,
 				759A958D18A39B720025C1D2 /* Local.h */,
 				759A958E18A39B720025C1D2 /* Local.m */,
@@ -263,9 +273,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				75A8530F18A27587006F37AE /* ViewController.m in Sources */,
+				759A959618A3B14D0025C1D2 /* MapaViewController.m in Sources */,
 				759A958F18A39B720025C1D2 /* Local.m in Sources */,
 				75A8530918A27587006F37AE /* AppDelegate.m in Sources */,
 				75A8530518A27587006F37AE /* main.m in Sources */,
+				759A959918A3B1F10025C1D2 /* ListaTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
