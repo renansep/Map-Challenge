@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [mapView setDelegate:self];
+    mapView.delegate = self;
     
 	/*AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(-23.616845,-46.796265);
