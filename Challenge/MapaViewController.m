@@ -7,6 +7,8 @@
 //
 
 #import "MapaViewController.h"
+#import "AppDelegate.h"
+#import "Local.h"
 
 @interface MapaViewController ()
 
@@ -26,7 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+	/*AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(-23.616845,-46.796265);
+    Local *loc = [[Local alloc] initWithNome:@"teste" andCoordenada:coord andHora:8 andMinuto:00];
+
+    [appDelegate.listaTableViewControler.locais addObject:loc];*/
 }
 
 - (void)didReceiveMemoryWarning

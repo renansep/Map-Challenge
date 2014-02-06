@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListaTableViewController : UITableViewController
+@interface ListaTableViewController : UITableViewController {
+    NSMutableArray *locais;
+}
+
+@property (nonatomic, strong) NSMutableArray *locais;
 
 @end
