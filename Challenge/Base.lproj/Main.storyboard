@@ -7,7 +7,7 @@
         <!--Mapa View Controller - Mapa-->
         <scene sceneID="PNE-Td-uWY">
             <objects>
-                <viewController id="aBZ-JS-wiE" customClass="MapaViewController" sceneMemberID="viewController">
+                <viewController title="Mapa" id="aBZ-JS-wiE" customClass="MapaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HBh-tD-a02"/>
                         <viewControllerLayoutGuide type="bottom" id="FaZ-JK-Xa0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fr7-RL-IYT">
-                                <rect key="frame" x="0.0" y="-49" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="109" width="320" height="459"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VF4-CX-AjT">
@@ -29,16 +29,16 @@
                                     <segment title="Hibrido"/>
                                 </segments>
                             </segmentedControl>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgr-Pd-rvt">
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Buscar..." translatesAutoresizingMaskIntoConstraints="NO" id="wgr-Pd-rvt">
                                 <rect key="frame" x="0.0" y="65" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5o-dy-B4h">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXV-6e-VDx">
                                 <rect key="frame" x="0.0" y="21" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="XkN-hI-czS"/>
+                                    <navigationItem title="Mapa" id="09Q-80-7n8"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -47,10 +47,11 @@
                     <tabBarItem key="tabBarItem" title="Mapa" id="Vbf-rg-0Ox">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-17"/>
                     </tabBarItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icQ-0L-8Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="908"/>
+            <point key="canvasLocation" x="23" y="901"/>
         </scene>
         <!--Lista Table View Controller - Lista-->
         <scene sceneID="K0l-TR-2YX">
