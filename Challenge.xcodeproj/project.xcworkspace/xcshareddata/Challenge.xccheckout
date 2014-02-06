@@ -5,19 +5,31 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>112BD802-C740-4CD1-8435-591C202D5FF0</string>
+=======
+	<string>D0675CDA-E55A-408E-A47C-B2AB594D1185</string>
+>>>>>>> a6e7e04db333a7a4110095853213cea5f21d2b5a
 	<key>IDESourceControlProjectName</key>
 	<string>Challenge</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+<<<<<<< HEAD
 		<key>D9B92C61-5ACF-4A24-846E-7DFF208C4BE4</key>
+=======
+		<key>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</key>
+>>>>>>> a6e7e04db333a7a4110095853213cea5f21d2b5a
 		<string>https://github.com/renansep/Map-Challenge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Challenge.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+<<<<<<< HEAD
 		<key>D9B92C61-5ACF-4A24-846E-7DFF208C4BE4</key>
+=======
+		<key>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</key>
+>>>>>>> a6e7e04db333a7a4110095853213cea5f21d2b5a
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +37,22 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
+<<<<<<< HEAD
 	<string>D9B92C61-5ACF-4A24-846E-7DFF208C4BE4</string>
+=======
+	<string>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</string>
+>>>>>>> a6e7e04db333a7a4110095853213cea5f21d2b5a
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
 			<string>D9B92C61-5ACF-4A24-846E-7DFF208C4BE4</string>
+=======
+			<string>9DE91FE4-E54E-423F-9AE1-1CF94858AD10</string>
+>>>>>>> a6e7e04db333a7a4110095853213cea5f21d2b5a
 			<key>IDESourceControlWCCName</key>
 			<string>Map-Challenge</string>
 		</dict>

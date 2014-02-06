@@ -17,4 +17,9 @@
     MKPointAnnotation *selectedPin;
 }
 
+
+- (IBAction)setMapType:(UISegmentedControl *)sender;
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @end
