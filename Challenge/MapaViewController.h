@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MapaViewController : UIViewController
+@interface MapaViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate> {
+    CLLocationManager *locationManager;
+    __weak IBOutlet MKMapView *mapView;
+    __weak IBOutlet UISearchBar *txtBusca;
+    MKPointAnnotation *selectedPin;
+}
 
 @end
