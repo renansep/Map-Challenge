@@ -28,6 +28,10 @@
                                     <segment title="Satélite"/>
                                     <segment title="Hibrido"/>
                                 </segments>
+                                <connections>
+                                    <action selector="TipoMapa:" destination="aBZ-JS-wiE" eventType="valueChanged" id="rCo-NY-nZm"/>
+                                    <action selector="setMapType:" destination="aBZ-JS-wiE" eventType="valueChanged" id="Bgz-zX-Acc"/>
+                                </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Buscar..." translatesAutoresizingMaskIntoConstraints="NO" id="wgr-Pd-rvt">
                                 <rect key="frame" x="0.0" y="65" width="320" height="44"/>
@@ -42,12 +46,14 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" id="Vbf-rg-0Ox">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-17"/>
                     </tabBarItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="fr7-RL-IYT" id="gfI-hG-GZS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icQ-0L-8Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
