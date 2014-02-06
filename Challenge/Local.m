@@ -10,6 +10,8 @@
 
 @implementation Local
 
+@synthesize nome, hora, minuto, coordenada;
+
 - (Local *)initWithNome:(NSString *)n andCoordenada:(CLLocationCoordinate2D)c andHora:(NSInteger *)h andMinuto:(NSInteger *)m
 {
     self = [super init];

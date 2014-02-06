@@ -7,12 +7,15 @@
 //
 
 #import "ListaTableViewController.h"
+#import "Local.h"
 
 @interface ListaTableViewController ()
 
 @end
 
 @implementation ListaTableViewController
+
+@synthesize locais;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,24 +47,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.locais count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AtividadeCell"];
     
-    // Configure the cell...
+    Local *loc = (self.locais)[indexPath.row];
+    cell.textLabel.text = loc.nome;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d:%02d", (int)loc.hora, (int)loc.minuto];
     
     return cell;
 }

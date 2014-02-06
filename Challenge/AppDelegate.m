@@ -7,12 +7,27 @@
 //
 
 #import "AppDelegate.h"
+#import "Local.h"
+#import "ListaTableViewController.h"
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    NSMutableArray *locais;
+}
+@synthesize listaTableViewControler;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(-23.616845,-46.796265);
+    Local *loc = [[Local alloc] initWithNome:@"Trabalho" andCoordenada:coord andHora:8 andMinuto:00];
+    locais = [[NSMutableArray alloc] init];
+    [locais addObject:loc];
+    loc = [[Local alloc] initWithNome:@"Reunião" andCoordenada:coord andHora:15 andMinuto:0];
+    [locais addObject:loc];
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *navigationController = [tabBarController viewControllers][1];
+    listaTableViewControler = [navigationController viewControllers][0];
+    listaTableViewControler.locais = locais;
     return YES;
 }
 							

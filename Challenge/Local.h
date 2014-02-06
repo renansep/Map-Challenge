@@ -17,6 +17,11 @@
     NSInteger *minuto;
 }
 
+@property NSString *nome;
+@property CLLocationCoordinate2D coordenada;
+@property NSInteger *hora;
+@property NSInteger *minuto;
+
 - (Local *)initWithNome:(NSString *)n andCoordenada:(CLLocationCoordinate2D)c andHora:(NSInteger *)h andMinuto:(NSInteger *)m;
 
 @end
