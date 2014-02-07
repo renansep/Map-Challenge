@@ -18,6 +18,7 @@
 
 @synthesize locais;
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -126,5 +127,31 @@
     [mapView setMapRegion:[l coordenada]];
     NSLog(@"");
 }
+
+- (IBAction)MudarFonte:(id)sender {
+
+    
+    [self setFontFamily:@"American Typewriter" forView:self.view andSubViews:YES];
+    
+    
+}
+
+-(void)setFontFamily:(NSString*)fontFamily forView:(UIView*)view andSubViews:(BOOL)isSubViews
+{
+    if ([view isKindOfClass:[UILabel class]])
+    {
+        UILabel *lbl = (UILabel *)view;
+        [lbl setFont:[UIFont fontWithName:fontFamily size:[[lbl font] pointSize]]];
+    }
+    
+    if (isSubViews)
+    {
+        for (UIView *sview in view.subviews)
+        {
+            [self setFontFamily:fontFamily forView:sview andSubViews:YES];
+        }
+    }
+}
+
 
 @end

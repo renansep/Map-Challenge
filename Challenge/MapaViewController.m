@@ -114,7 +114,7 @@
         if (placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
             //String to hold address
-            
+//            placemark.location.coordinate;
             NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
             pino.title = locatedAt;
         }

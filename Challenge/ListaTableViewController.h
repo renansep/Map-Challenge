@@ -13,5 +13,6 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *locais;
+- (IBAction)MudarFonte:(id)sender;
 
 @end
