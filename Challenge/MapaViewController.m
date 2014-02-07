@@ -107,7 +107,7 @@
 -(void)buscaEnderecoPino:(MKPointAnnotation*)pino
 {
     MKPlacemark *destinationPlacemark = [[MKPlacemark alloc] initWithCoordinate:[pino coordinate] addressDictionary:nil];
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
+    //MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
     
     CLGeocoder *geo = [[CLGeocoder alloc] init];
     [geo  reverseGeocodeLocation:destinationPlacemark.location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -155,7 +155,7 @@
 
 -(void)cadastraLocal:(id)sender
 {
-    CadastroLocalViewController *monitorMenuViewController = [[CadastroLocalViewController alloc] init];
+//    CadastroLocalViewController *monitorMenuViewController = [[CadastroLocalViewController alloc] init];
 //    [self presentViewController:monitorMenuViewController animated:YES completion:nil];
     
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -168,7 +168,7 @@
     CadastroLocalViewController *secondViewController =
     [self.storyboard instantiateViewControllerWithIdentifier:@"localViewController"];
     secondViewController.descricao = selectedPin.title;
-    [self presentModalViewController:secondViewController animated:YES];
+    [self presentViewController:secondViewController animated:YES completion:nil];
 
     
 }
@@ -179,23 +179,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-    
-    - (IBAction)setMapType:(UISegmentedControl *)sender {
-        switch (sender.selectedSegmentIndex)
-        {
-            case 0:
-                mapView.mapType = MKMapTypeStandard;
-                break;
-            case 1:
-                mapView.mapType = MKMapTypeSatellite;
-                break;
-            case 2:
-                mapView.mapType = MKMapTypeHybrid;
-                break;
-        }
+- (IBAction)setMapType:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex)
+    {
+        case 0:
+            mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            mapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            mapView.mapType = MKMapTypeHybrid;
+            break;
     }
+}
     
-    
+- (void)setMapRegion:(CLLocationCoordinate2D) coordinate
+{
+    [mapView setRegion:MKCoordinateRegionMakeWithDistance(coordinate, 500, 500) animated:YES];
+}
 
 @end

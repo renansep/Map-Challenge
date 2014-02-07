@@ -18,11 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(-23.616845,-46.796265);
-    Local *loc = [[Local alloc] initWithNome:@"Trabalho" andCoordenada:coord andHora:8 andMinuto:00];
+    CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake(-46.616845,-23.796265);
+    Local *loc = [[Local alloc] initWithNome:@"Trabalho" andCoordenada:coord andHora:8 andMinuto:0];
     locais = [[NSMutableArray alloc] init];
     [locais addObject:loc];
-    loc = [[Local alloc] initWithNome:@"Reunião" andCoordenada:coord andHora:15 andMinuto:0];
-    [locais addObject:loc];
+    Local *loc2 = [[Local alloc] initWithNome:@"Reunião" andCoordenada:coord2 andHora:15 andMinuto:0];
+    [locais addObject:loc2];
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UINavigationController *navigationController = [tabBarController viewControllers][1];

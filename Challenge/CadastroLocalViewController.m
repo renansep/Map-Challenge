@@ -42,16 +42,16 @@
 }
 
 - (IBAction)fechaModal:(id)sender {
-    [self dismissModalViewControllerAnimated: YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cadastrarLocal:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(-23.616845,-46.796265);
-    Local *loc = [[Local alloc] initWithNome:_txtDescricao.text andCoordenada:coord andHora:8 andMinuto:00];
+    Local *loc = [[Local alloc] initWithNome:_txtDescricao.text andCoordenada:coord andHora:0 andMinuto:0];
     
     [appDelegate.listaTableViewControler.locais addObject:loc];
-    [self dismissModalViewControllerAnimated: YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 @end

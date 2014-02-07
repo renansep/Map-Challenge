@@ -19,6 +19,7 @@
 
 
 - (IBAction)setMapType:(UISegmentedControl *)sender;
+- (void)setMapRegion:(CLLocationCoordinate2D) coordinate;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 

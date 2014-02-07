@@ -8,6 +8,7 @@
 
 #import "ListaTableViewController.h"
 #import "Local.h"
+#import "MapaViewController.h"
 
 @interface ListaTableViewController ()
 
@@ -116,5 +117,14 @@
 }
 
  */
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[self tabBarController] setSelectedIndex:0];
+    MapaViewController *mapView = (MapaViewController *)[[[self tabBarController] viewControllers] firstObject];
+    Local *l = [locais objectAtIndex:[indexPath row]];
+    [mapView setMapRegion:[l coordenada]];
+    
+}
 
 @end
