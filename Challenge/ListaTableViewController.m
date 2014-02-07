@@ -131,7 +131,7 @@
 - (IBAction)MudarFonte:(id)sender {
 
     
-    [self setFontFamily:@"Times New Roman" forView:self.view andSubViews:YES];
+    [self setFontFamily:@"MarkerFelt-Thin" forView:self.view andSubViews:YES];
     
     
 }
