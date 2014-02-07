@@ -11,7 +11,9 @@
 #import "Local.h"
 #import "CadastroLocalViewController.h"
 
-@interface MapaViewController ()
+@interface MapaViewController () {
+    BOOL pinVermelho;
+}
 
 @end
 
@@ -45,6 +47,8 @@
                                                   action:@selector(adicionaPino:)];
     toqueLongoMapa.minimumPressDuration = 0.5;
     [mapView addGestureRecognizer:toqueLongoMapa];
+    
+    pinVermelho = false;
     
 	/*AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(-23.616845,-46.796265);
@@ -114,7 +118,7 @@
         if (placemarks.count > 0) {
             CLPlacemark *placemark = [placemarks objectAtIndex:0];
             //String to hold address
-            
+//            placemark.location.coordinate;
             NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
             pino.title = locatedAt;
         }
@@ -129,22 +133,23 @@
     MKPinAnnotationView *annView=[[MKPinAnnotationView alloc]
                                   initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
-    if(selectedPin == nil)
+    if(pinVermelho)
     {
-        annView.pinColor = MKPinAnnotationColorGreen;
+        annView.pinColor = MKPinAnnotationColorRed;
+        pinVermelho = false;
     }
     else
     {
-        annView.pinColor = MKPinAnnotationColorRed;
+        annView.pinColor = MKPinAnnotationColorGreen;
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        [rightButton addTarget:self
+                        action:@selector(cadastraLocal:)
+              forControlEvents:(UIControlEvents)UIControlEventTouchDown];
+        annView.rightCalloutAccessoryView = rightButton;
     }
     
     annView.animatesDrop = YES;
     annView.canShowCallout = YES;
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    [rightButton addTarget:self
-                    action:@selector(cadastraLocal:)
-          forControlEvents:(UIControlEvents)UIControlEventTouchDown];
-    annView.rightCalloutAccessoryView = rightButton;
     return annView;
 }
 
@@ -161,13 +166,12 @@
 
 -(void)cadastraLocal:(id)sender
 {
-    CadastroLocalViewController *monitorMenuViewController = [[CadastroLocalViewController alloc] init];
-    
     CadastroLocalViewController *secondViewController =
     [self.storyboard instantiateViewControllerWithIdentifier:@"localViewController"];
+    
     secondViewController.descricao = selectedPin.title;
     secondViewController.coordenadas = selectedPin.coordinate;
-    [self presentModalViewController:secondViewController animated:YES];
+    [self presentViewController:secondViewController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,9 +180,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-    
 - (IBAction)setMapType:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex)
     {
@@ -198,12 +199,19 @@
 {
     if(selectedPin != nil)
     {
-        selectedPin.title = title;
-        selectedPin.subtitle = horario;
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        point.title = title;
+        point.subtitle = horario;
+        point.coordinate = selectedPin.coordinate;
+        [mapView removeAnnotation:selectedPin];
+        pinVermelho = true;
+        [mapView addAnnotation:point];
     }
 }
-
-
     
+- (void)setMapRegion:(CLLocationCoordinate2D) coordinate
+{
+    [mapView setRegion:MKCoordinateRegionMakeWithDistance(coordinate, 500, 500) animated:YES];
+}
 
 @end

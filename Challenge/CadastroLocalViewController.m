@@ -28,7 +28,6 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"fdsad");
     [super viewDidLoad];
     _lblEndereco.text = descricao;
     NSLog(@"%@", descricao);
@@ -42,12 +41,12 @@
 }
 
 - (IBAction)fechaModal:(id)sender {
-    [self dismissModalViewControllerAnimated: YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cadastrarLocal:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     int hora   = [[calendar components:NSHourCalendarUnit    fromDate:[_horario date]] hour];

@@ -8,6 +8,7 @@
 
 #import "ListaTableViewController.h"
 #import "Local.h"
+#import "MapaViewController.h"
 
 @interface ListaTableViewController ()
 
@@ -16,11 +17,12 @@
 @implementation ListaTableViewController
 @synthesize locais;
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        locais = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -28,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    locais = [[NSMutableArray alloc] init];
     [self.tableView setDelegate:self];
 }
 
@@ -52,10 +53,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"das");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AtividadeCell"];
     
     Local *loc = (self.locais)[indexPath.row];
+    NSLog(@"%d", [indexPath row]);
     cell.textLabel.text = loc.nome;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%02d:%02d", (int)loc.hora, (int)loc.minuto];
     
@@ -64,8 +65,10 @@
 
 -(void)addItem:(Local*)local
 {
+    if (locais == nil) {
+        locais = [[NSMutableArray alloc] init];
+    }
     [locais addObject:local];
-
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[locais indexOfObject:local] inSection:0];
     [self.tableView beginUpdates];
     [self.tableView
@@ -124,5 +127,40 @@
 }
 
  */
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[self tabBarController] setSelectedIndex:0];
+    MapaViewController *mapView = (MapaViewController *)[[[self tabBarController] viewControllers] firstObject];
+    Local *l = [locais objectAtIndex:[indexPath row]];
+    [mapView setMapRegion:[l coordenada]];
+    NSLog(@"");
+}
+
+- (IBAction)MudarFonte:(id)sender {
+
+    
+    [self setFontFamily:@"American Typewriter" forView:self.view andSubViews:YES];
+    
+    
+}
+
+-(void)setFontFamily:(NSString*)fontFamily forView:(UIView*)view andSubViews:(BOOL)isSubViews
+{
+    if ([view isKindOfClass:[UILabel class]])
+    {
+        UILabel *lbl = (UILabel *)view;
+        [lbl setFont:[UIFont fontWithName:fontFamily size:[[lbl font] pointSize]]];
+    }
+    
+    if (isSubViews)
+    {
+        for (UIView *sview in view.subviews)
+        {
+            [self setFontFamily:fontFamily forView:sview andSubViews:YES];
+        }
+    }
+}
+
 
 @end

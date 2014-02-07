@@ -13,8 +13,8 @@
     NSMutableArray *locais;
 }
 
-@property NSMutableArray *locais;
-
 -(void)addItem:(Local*)local;
+@property (nonatomic, strong) NSMutableArray *locais;
+- (IBAction)MudarFonte:(id)sender;
 
 @end
