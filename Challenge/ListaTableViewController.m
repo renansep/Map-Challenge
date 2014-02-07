@@ -124,7 +124,7 @@
     MapaViewController *mapView = (MapaViewController *)[[[self tabBarController] viewControllers] firstObject];
     Local *l = [locais objectAtIndex:[indexPath row]];
     [mapView setMapRegion:[l coordenada]];
-    
+    NSLog(@"");
 }
 
 @end
