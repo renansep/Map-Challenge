@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ListaTableViewController.h"
+#import "MapaViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ListaTableViewController *listaTableViewControler;
+@property (strong, nonatomic) MapaViewController *mapaViewController;
 
 @end

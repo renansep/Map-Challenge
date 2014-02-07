@@ -14,7 +14,6 @@
 @end
 
 @implementation ListaTableViewController
-
 @synthesize locais;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -29,12 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    locais = [[NSMutableArray alloc] init];
+    [self.tableView setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,13 +52,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"das");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AtividadeCell"];
     
     Local *loc = (self.locais)[indexPath.row];
     cell.textLabel.text = loc.nome;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d:%02d", (int)loc.hora, (int)loc.minuto];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%02d:%02d", (int)loc.hora, (int)loc.minuto];
     
     return cell;
+}
+
+-(void)addItem:(Local*)local
+{
+    [locais addObject:local];
+
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[locais indexOfObject:local] inSection:0];
+    [self.tableView beginUpdates];
+    [self.tableView
+     insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+    [self.tableView endUpdates];
+
 }
 
 /*

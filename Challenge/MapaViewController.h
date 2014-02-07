@@ -22,4 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+-(void)setPontoAtualVermelho:(NSString*)title naHora:(NSString*)horario;
+
 @end

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Local.h"
 
 @interface ListaTableViewController : UITableViewController {
     NSMutableArray *locais;
 }
 
-@property (nonatomic, strong) NSMutableArray *locais;
+@property NSMutableArray *locais;
+
+-(void)addItem:(Local*)local;
 
 @end

@@ -15,7 +15,7 @@
 @end
 
 @implementation CadastroLocalViewController
-@synthesize descricao;
+@synthesize descricao, coordenadas;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,7 @@
 {
     NSLog(@"fdsad");
     [super viewDidLoad];
-    _txtDescricao.text = descricao;
+    _lblEndereco.text = descricao;
     NSLog(@"%@", descricao);
 	// Do any additional setup after loading the view.
 }
@@ -47,11 +47,24 @@
 
 - (IBAction)cadastrarLocal:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(-23.616845,-46.796265);
-    Local *loc = [[Local alloc] initWithNome:_txtDescricao.text andCoordenada:coord andHora:8 andMinuto:00];
     
-    [appDelegate.listaTableViewControler.locais addObject:loc];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    int hora   = [[calendar components:NSHourCalendarUnit    fromDate:[_horario date]] hour];
+    int minuto = [[calendar components:NSMinuteCalendarUnit  fromDate:[_horario date]] minute];
+    Local *loc = [[Local alloc] initWithNome:_txtDescricao.text andCoordenada:coordenadas andHora:hora andMinuto:minuto];
+    
+    [appDelegate.listaTableViewControler addItem:loc];
+    
+    
+    [appDelegate.mapaViewController setPontoAtualVermelho:_txtDescricao.text naHora:[NSString stringWithFormat:@"%02d:%02d", hora, minuto]];
     [self dismissModalViewControllerAnimated: YES];
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return true;
 }
 @end

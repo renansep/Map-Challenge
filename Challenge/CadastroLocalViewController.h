@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface CadastroLocalViewController : UIViewController
+@interface CadastroLocalViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtDescricao;
+@property (weak, nonatomic) IBOutlet UILabel *lblEndereco;
 @property (nonatomic, retain) NSString *descricao;
+@property (weak, nonatomic) IBOutlet UIDatePicker *horario;
+@property (nonatomic) CLLocationCoordinate2D coordenadas;
 - (IBAction)fechaModal:(id)sender;
 - (IBAction)cadastrarLocal:(id)sender;
 

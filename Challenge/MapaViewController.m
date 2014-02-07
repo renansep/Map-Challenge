@@ -107,7 +107,7 @@
 -(void)buscaEnderecoPino:(MKPointAnnotation*)pino
 {
     MKPlacemark *destinationPlacemark = [[MKPlacemark alloc] initWithCoordinate:[pino coordinate] addressDictionary:nil];
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
+    //MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:destinationPlacemark];
     
     CLGeocoder *geo = [[CLGeocoder alloc] init];
     [geo  reverseGeocodeLocation:destinationPlacemark.location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -129,8 +129,14 @@
     MKPinAnnotationView *annView=[[MKPinAnnotationView alloc]
                                   initWithAnnotation:annotation reuseIdentifier:@"pin"];
     
-    annView.pinColor = MKPinAnnotationColorGreen;
-    
+    if(selectedPin == nil)
+    {
+        annView.pinColor = MKPinAnnotationColorGreen;
+    }
+    else
+    {
+        annView.pinColor = MKPinAnnotationColorRed;
+    }
     
     annView.animatesDrop = YES;
     annView.canShowCallout = YES;
@@ -156,21 +162,12 @@
 -(void)cadastraLocal:(id)sender
 {
     CadastroLocalViewController *monitorMenuViewController = [[CadastroLocalViewController alloc] init];
-//    [self presentViewController:monitorMenuViewController animated:YES completion:nil];
-    
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    CadastroLocalViewController *viewController = (CadastroLocalViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CadastroLocalViewController"];
-//    [self presentViewController:viewController animated:YES completion:nil];
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        
-//    }];
     
     CadastroLocalViewController *secondViewController =
     [self.storyboard instantiateViewControllerWithIdentifier:@"localViewController"];
     secondViewController.descricao = selectedPin.title;
+    secondViewController.coordenadas = selectedPin.coordinate;
     [self presentModalViewController:secondViewController animated:YES];
-
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -180,22 +177,33 @@
 }
 
 
+
     
-    - (IBAction)setMapType:(UISegmentedControl *)sender {
-        switch (sender.selectedSegmentIndex)
-        {
-            case 0:
-                mapView.mapType = MKMapTypeStandard;
-                break;
-            case 1:
-                mapView.mapType = MKMapTypeSatellite;
-                break;
-            case 2:
-                mapView.mapType = MKMapTypeHybrid;
-                break;
-        }
+- (IBAction)setMapType:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex)
+    {
+        case 0:
+            mapView.mapType = MKMapTypeStandard;
+            break;
+        case 1:
+            mapView.mapType = MKMapTypeSatellite;
+            break;
+        case 2:
+            mapView.mapType = MKMapTypeHybrid;
+            break;
     }
-    
+}
+
+-(void)setPontoAtualVermelho:(NSString*)title naHora:(NSString*)horario
+{
+    if(selectedPin != nil)
+    {
+        selectedPin.title = title;
+        selectedPin.subtitle = horario;
+    }
+}
+
+
     
 
 @end
